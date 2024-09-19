@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Text to Speech</string>
+    <string name="number_button_description">Number Button</string>
+<!--    <string name="play_button_description">Play Button</string>-->
+</resources>

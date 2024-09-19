@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<!--    android:orientation="horizontal"-->
+
+    <Button
+        android:id="@+id/numberButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:gravity="start"
+        android:padding="8dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/number_button_description"
+        android:drawableRight="@drawable/ic_play_button_removebg_rs"
+        android:scaleType="fitCenter"
+        />
+
+<!--    android:layout_toStartOf="@+id/playButton"-->
+
+    <!--    <ImageButton-->
+    <!--        android:id="@+id/playButton"-->
+    <!--        android:layout_width="48dp"-->
+    <!--        android:layout_height="48dp"-->
+    <!--        android:src="@drawable/ic_play_button_removebg"-->
+    <!--        android:background="?android:attr/selectableItemBackground"-->
+    <!--        android:scaleType="fitCenter"-->
+    <!--        android:padding="8dp"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:layout_centerVertical="true"-->
+    <!--        android:contentDescription="@string/play_button_description"-->
+    <!--        />-->
+
+</RelativeLayout>
