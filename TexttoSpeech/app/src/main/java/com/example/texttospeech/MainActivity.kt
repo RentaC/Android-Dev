@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-//import com.github.mfathi91.number2words.NumberToWords
-//import com.toyama.includes.number2word.NumberToWordConverter
 
 class MainActivity : AppCompatActivity() {
 
@@ -56,28 +54,7 @@ class MainActivity : AppCompatActivity() {
         } else if (number == 1000) {
             numberText = " One Thousand "
         }
-//        } else if (number < 1000000) {
-//            numberText = convertNumberToText(number / 1000) + " Thousand " + convertNumberToText(number % 1000)
-//        }
 
         return numberText.trim()
     }
-
-//    private fun generateNumberList(): List<String> {
-//        val numbers = mutableListOf<String>()
-//        for (i in 0..1000) {
-//            numbers.add(NumberUtil.convertToText(i)) // Use a utility function to convert numbers to text (e.g., Zero, One, Two, etc.)
-//        }
-//        return numbers
-//    }
-
-//    private fun generateNumberList(): List<String> {
-//        val numbers = mutableListOf<String>()
-//        val numberToWords = NumberToWords()
-//        for (i in 0..1000) {
-//            numbers.add(numberToWords.convert(i))
-//        }
-//        return numbers
-//    }
-
 }

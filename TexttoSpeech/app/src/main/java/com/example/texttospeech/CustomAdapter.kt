@@ -39,7 +39,6 @@ class CustomAdapter(private val numbers: List<String>, private val context: Cont
         holder.numberButton.setOnClickListener {
 
             // Use Text-to-Speech for number pronunciation
-            //tts.language = Locale.US // Set desired language (e.g., US English)
             tts.speak(number, TextToSpeech.QUEUE_FLUSH, null, null)
 
 // Play Custom Sound
@@ -55,7 +54,6 @@ class CustomAdapter(private val numbers: List<String>, private val context: Cont
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val numberButton: Button = itemView.findViewById(R.id.numberButton)
-        //val playButton: ImageButton = itemView.findViewById(R.id.playButton)
     }
 
 // code related to playing a custom sound file
