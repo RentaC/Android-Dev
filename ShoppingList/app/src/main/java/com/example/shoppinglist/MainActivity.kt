@@ -18,9 +18,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: ItemAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var addItemEditText: EditText
-    //private var edited = false
 
-   // data class Item(var text: String, var checked: Boolean = false)
    data class Item(var text: String, var checked: Boolean = false, var selected: Boolean = false)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -92,8 +90,6 @@ class MainActivity : AppCompatActivity() {
         override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
             val currentItem = items[position]
 
-            //holder.itemTextView.text = "${position + 1}. ${currentItem.text}"         //currentItem.text
-
             val itemText = holder.itemView.context.getString(R.string.item_format, position + 1, currentItem.text)
             holder.itemTextView.text = itemText
 
@@ -129,11 +125,6 @@ class MainActivity : AppCompatActivity() {
             holder.deleteButton.setOnClickListener {
                 val itemPosition = holder.adapterPosition
                 itemList.removeAt(itemPosition)
-
-//                itemList.add(itemPosition + 1, currentItem.copy(checkedPosition = itemPosition))
-
-//                itemList.add(itemPosition - 1 , currentItem.copy(checkedPosition = itemPosition))
-
                 notifyItemRemoved(itemPosition)
                 notifyItemRangeChanged(itemPosition, items.size - itemPosition)
 
