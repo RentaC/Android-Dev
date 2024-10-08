@@ -92,40 +92,8 @@ class MainActivity : AppCompatActivity() {
             Log.e(TAG, "Failed to save dog to database: ${error.message}")
             realm.close() // Close the Realm instance in case of an error
         })
-//        realm.executeTransaction { realm ->
-//            // Transaction code here
-//            // ...
-//        }
-
-//        // Close the Realm instance after the transaction
-//        realm.close()
-
         displaySavedDogs()
     }
-
-
-//    private fun saveDogToDatabase(dogImageUrl: String) {
-//        val realmConfig = RealmConfiguration.Builder()
-//            .allowWritesOnUiThread(true) // Enable transactions on the UI thread
-//            .build()
-//        val realm = Realm.getInstance(realmConfig)
-//        //val realm = Realm.getDefaultInstance()
-//        realm.executeTransaction { realm ->
-//            val dog = Dog()
-//            dog.id = UUID.randomUUID().toString()
-//            dog.breed = extractBreedFromImageUrl(dogImageUrl)
-//            dog.link = dogImageUrl
-//            realm.insert(dog)
-//        }
-//
-//        displaySavedDogs()
-//    }
-
-//    private fun displaySavedDogs() {
-//        val realm = Realm.getDefaultInstance()
-//        val dogs = realm.where(Dog::class.java).findAll()
-//        dogAdapter.updateData(dogs)
-//    }
 
     private fun displaySavedDogs() {
         val realmConfig = RealmConfiguration.Builder()
@@ -143,13 +111,6 @@ class MainActivity : AppCompatActivity() {
                 Log.e(TAG, "Failed to open Realm instance: ${exception.message}")
             }
         })
-
-//        val realm = Realm.getInstance(realmConfig)
-//        val dogs = realm.where(Dog::class.java).findAll()
-//        dogAdapter.updateData(dogs)
-
-        // Close the Realm instance after retrieving the data
-        //realm.close()
     }
 
     private fun extractBreedFromImageUrl(imageUrl: String): String {
@@ -160,25 +121,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onItemClick(dog: Dog) {
-        val intent = Intent(this,  DogDetailsActivity::class.java)//DogDetailsFragment::class.java)
+        val intent = Intent(this,  DogDetailsActivity::class.java)
         intent.putExtra("breed", dog.breed)
         intent.putExtra("imageUrl", dog.link)
         startActivity(intent)
     }
-
-//
-//    private fun onItemClick(dog: Dog) {
-//        val bundle = Bundle()
-//        bundle.putString("breed", dog.breed)
-//        bundle.putString("imageUrl", dog.link)
-//
-//        val dogDetailsFragment = DogDetailsFragment()
-//        dogDetailsFragment.arguments = bundle
-//
-//        supportFragmentManager.beginTransaction()
-//            .replace(R.id.navHostFragment, dogDetailsFragment)
-//            .addToBackStack(null)
-//            .commit()
-//    }
-
 }

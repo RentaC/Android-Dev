@@ -42,11 +42,6 @@ class DogAdapter : RecyclerView.Adapter<DogAdapter.DogViewHolder>() {
             }
         }
 
-//        private fun onItemClick(dog: Dog) {
-//            // Handle item click
-//            // You can navigate to the second screen or perform any other desired action
-//        }
-
     }
 
     fun setOnItemClickListener(listener: (Dog) -> Unit) {
